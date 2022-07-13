@@ -1,0 +1,41 @@
+---
+title: "Converting Multi-layer data to single layer data"
+author: "Shrusti Ghela"
+date: "7/13/2022"
+output: pdf_document
+---
+```{r}
+data <- read.csv("~/Desktop/layer_data.csv")
+```
+
+```{r}
+data <- as.data.frame(data)
+```
+
+```{r}
+library(dplyr)
+library(tidyr)
+
+data <- data %>%                                        
+  group_by(pit_id) %>%
+  mutate(grain_size = replace_na(grain_size,mean(grain_size, na.rm = TRUE)))
+
+data <- data %>%                                        
+  group_by(pit_id) %>%
+  mutate(density = replace_na(density,mean(density, na.rm = TRUE)))
+```
+
+```{r}
+head(data)
+```
+
+```{r}
+layer_merge <- data %>%
+   group_by(pit_id, height, site_name, latitude, longitude, date ) %>% 
+   summarise_at(vars("grain_size", "density", "temperature"), mean)
+```
+
+```{r}
+write.csv(layer_merge, "~/Desktop/layer_merge.csv")
+```
+
