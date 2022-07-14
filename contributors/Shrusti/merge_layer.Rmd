@@ -36,6 +36,11 @@ layer_merge <- data %>%
 ```
 
 ```{r}
+layer_merge$b <- 0.3120 + 0.2773*(layer_merge$grain_size) + 0.0040223*(layer_merge$density)
+layer_merge$zeta <- 15225*(layer_merge$grain_size)^(-0.978)
+```
+
+```{r}
 write.csv(layer_merge, "~/Desktop/layer_merge.csv")
 ```
 
