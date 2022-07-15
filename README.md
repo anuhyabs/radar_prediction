@@ -1,42 +1,24 @@
-# Sample Project
-
-This is as an example on how teams can structure their project repositories. Thanks to Lindsey Heagey and Joachim Meyer for the template!
-
-## Files
-
-* `.gitignore`
-<br> Globally ignored files by `git` for the project.
-* `environment.yml`
-<br> `conda` environment description needed to run this project.
-* `README.md`
-<br> Description of the project (see suggested headings below)
-
-## Folders
-
-### `contributors`
-Each team member has it's own folder under contributors, where they can work on their contribution. Having a dedicated folder for each person helps to prevent conflicts when merging with the main branch.
-
-### `notebooks`
-Notebooks that are considered delivered results for the project should go in here.
-
-### `scripts`
-Helper utilities that are shared with the team
-
-# Recommended content for your README.md file:
+# Radar Scattering Prediction
 
 ## Project Summary
 
-### Project Title
-
-Brief title describing the proposed work.
+We are trying to estimate the backscattering of radar from snowpits using parameters from SnowEx data such as density, temperature, grain size and height. We are also trying to understand the relationship between these input parameters and the backscatter and evaluate the parameter sensitivity. We also want to explore the link between SnowEx pit measurements and input parameters of DMRT-Bic.
 
 ### Collaborators on this project
 
-List all participants on the project. Choose one team member to act as project lead, and identify one hackweek organizer as the data science lead.
+| Team Member  | Role | GitHub ID |
+| ------------- | ------------- | --- |
+| Jonas Jans  | Project Lead  | [jonas-frederik](https://github.com/jonas-frederik) |
+| HP Marshall | Data Science Lead  | [hpmarshall](https://github.com/hpmarshall) |
+| Aaliyah Hanni | Data Engineer | [aaliyahfiala42](https://github.com/aaliyahfiala42) |
+| Yiying Gao | ML Engineer | [viggieG](https://github.com/viggieG) |
+| Anuhya Bhagavatula| Data Scientist | [anuhyabs](https://github.com/anuhyabs) |
+| Shrusti Ghela | ML Engineer | [shrusti-ghela](https://github.com/shrusti-ghela) |
+| Samuel Marcus | Intern | [samuelmarcus99](https://github.com/samuelmarcus99) |
 
 ### The problem
 
-What problem are you going to explore? Provide a few sentences. If this is a technical exploration of software or data science methods, explain why this work is important in a broader context.
+Currently, we know that there is backscatter when a radar is directed towards snow but we do not know what variables of the snow actually have an impact on this backscatter and how much impact each of these parameters have on it. This is is the problem we are trying to solve using Machine Learning. In the broader context, the inference of the relationship between input parameters and the amplitude can help us calibrate current sensor tools and also to be used to reverse engineer when the satellites are up in the air.
 
 ### Application Example
 
@@ -48,7 +30,9 @@ If you already have some data to explore, briefly describe it here (size, format
 
 ### Specific Questions
 
-List the specific tasks you want to accomplish or research questions you want to answer.
+1. Can we use machine learning to predict the radar backscattering from snowex input parameters?
+2. Is there a relationship between the DMRT input parameters and SnowEx pit measurements?
+3. How much do the input parameters contribute  to the variability of the amplitude? 
 
 ### Existing methods
 
@@ -61,4 +45,6 @@ Building from what you learn at this hackweek, what new approaches would you lik
 ### Background reading
 
 Optional: links to manuscripts or technical documents for more in-depth analysis.
-
+1. https://ieeexplore.ieee.org/document/6185696
+2. https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=6877612
+3. https://web.eecs.umich.edu/~leutsang/Computer%20Codes%20and%20Simulations.html
