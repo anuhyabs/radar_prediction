@@ -4,18 +4,6 @@
 
 We are trying to estimate the backscattering of radar from snowpits using parameters from SnowEx data such as density, temperature, grain size and height. We are also trying to understand the relationship between these input parameters and the backscatter and evaluate the parameter sensitivity. We also want to explore the link between SnowEx pit measurements and input parameters of DMRT-Bic.
 
-### Collaborators on this project
-
-| Team Member  | Role | GitHub ID |
-| ------------- | ------------- | --- |
-| Jonas Jans  | Project Lead  | [jonas-frederik](https://github.com/jonas-frederik) |
-| HP Marshall | Data Science Lead  | [hpmarshall](https://github.com/hpmarshall) |
-| Aaliyah Hanni | Data Engineer | [aaliyahfiala42](https://github.com/aaliyahfiala42) |
-| Yiying Gao | ML Engineer | [viggieG](https://github.com/viggieG) |
-| Anuhya Bhagavatula| Data Scientist | [anuhyabs](https://github.com/anuhyabs) |
-| Shrusti Ghela | ML Engineer | [shrusti-ghela](https://github.com/shrusti-ghela) |
-| Samuel Marcus | Intern | [samuelmarcus99](https://github.com/samuelmarcus99) |
-
 ### The problem
 
 Currently, we know that there is backscatter when a radar is directed towards snow but we do not know what variables of the snow actually have an impact on this backscatter and how much impact each of these parameters have on it. This is is the problem we are trying to solve using Machine Learning. In the broader context, the inference of the relationship between input parameters and the amplitude can help us calibrate current sensor tools and also to be used to reverse engineer when the satellites are up in the air.
@@ -42,9 +30,20 @@ How would you or others traditionally try to address this problem?
 
 Building from what you learn at this hackweek, what new approaches would you like to try to implement?
 
+### Collaborators on this project
+
+| Team Member  | Role | GitHub ID |
+| ------------- | ------------- | --- |
+| Jonas Jans  | Project Lead  | [jonas-frederik](https://github.com/jonas-frederik) |
+| HP Marshall | Data Science Lead  | [hpmarshall](https://github.com/hpmarshall) |
+| Aaliyah Hanni | Data Engineer | [aaliyahfiala42](https://github.com/aaliyahfiala42) |
+| Yiying Gao | ML Engineer | [viggieG](https://github.com/viggieG) |
+| Anuhya Bhagavatula| Data Scientist | [anuhyabs](https://github.com/anuhyabs) |
+| Shrusti Ghela | ML Engineer | [shrusti-ghela](https://github.com/shrusti-ghela) |
+| Samuel Marcus | Intern | [samuelmarcus99](https://github.com/samuelmarcus99) |
+
 ### Background reading
 
-Optional: links to manuscripts or technical documents for more in-depth analysis.
 1. https://ieeexplore.ieee.org/document/6185696
 2. https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=6877612
 3. https://web.eecs.umich.edu/~leutsang/Computer%20Codes%20and%20Simulations.html
