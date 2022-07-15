@@ -26,11 +26,11 @@ Variable Importance (for VV polarization):
 
 Snow pit data set accessed from the snowexsql database:
 
-![snowex](snowex.jpeg)
+![snowex](snowex.jpg)
 
 UAVSAR Data for Output:
 
-![uavsar](uavsar.jpeg)
+![uavsar](uavsar.jpg)
 
 ### Specific Questions
 
