@@ -1,0 +1,175 @@
+---
+title: "ML modeling"
+author: "Shrusti Ghela"
+date: "7/14/2022"
+output: pdf_document
+---
+
+```{r}
+df1 <- read.csv("~/Desktop/layer_merge.csv")
+df2 <- read.csv("~/Desktop/amplitudes.csv")
+```
+```{r}
+head(df1)
+head(df2)
+```
+```{r}
+library(dplyr)
+data = df1 %>% full_join(df2,by="pit_id")
+head(data)
+```
+```{r}
+data <- na.omit(data)
+
+```
+```{r}
+data$y
+```
+
+
+```{r}
+write.csv(data, "~/Desktop/final_data.csv")
+```
+
+```{r}
+data$density <- scale(data$density, center=TRUE, scale=TRUE)
+data$height <- scale(data$height,center=TRUE,scale=TRUE)
+data$temperature <- scale(data$temperature,center=TRUE,scale=TRUE)
+data$grain_size <- scale(data$grain_size,center=TRUE,scale=TRUE)
+```
+
+
+
+```{r}
+data$
+```
+
+
+```{r}
+```
+
+```{r}
+library(caret)
+```
+```{r}
+# Validation Set appraoch
+training.samples <- data$y %>%
+  createDataPartition(p = 0.8, list = FALSE)     #creating 80-20 train-test split (because of less number of data-points)
+train.data <- data[training.samples, ]
+test.data <- data[-training.samples, ]
+
+
+```
+
+```{r}
+# Leave One Out Cross Validation for 
+
+loocv.error <- cv._model.type(_dataframe.name_, _model.name_)$delta[1]
+
+```
+
+```{r}
+# K-fold Cross Validation
+
+kfcv.error <- cv._model.type(_dataframe.name_ , _model.name_ , K = _kvalue.here_)$delta[1]
+```
+
+```{r}
+```
+
+
+```{r}
+#Linear regression
+lm.fit <- lm(y ~ height + grain_size + density + temperature , data= train.data)
+summary(lm.fit)
+```
+
+
+```{r}
+y_lm.fit <- predict(lm.fit, test.data)
+vs.error <- mean((test.data$y - predict(lm.fit, test.data))^2)
+absolute_error <- mean(abs(test.data$y - predict(lm.fit, test.data)))
+y_train <- predict(lm.fit, train.data)
+vs.error.1 <- mean((train.data$y - predict(lm.fit, train.data))^2)
+absolute_error
+```
+
+```{r}
+plot(test.data$y, y_lm.fit)
+```
+
+```{r}
+vs.error
+vs.error.1
+```
+
+```{r}
+library(caret)
+
+#specify the cross-validation method
+ctrl <- trainControl(method = "LOOCV")
+
+#fit a regression model and use LOOCV to evaluate performance
+model <- train(y ~ grain_size + density + temperature + height, data = data, method = "lm", trControl = ctrl)
+
+#view summary of LOOCV               
+print(model)
+```
+```{r}
+library(caret)
+
+#specify the cross-validation method
+ctrl <- trainControl(method = "cv", number = 10)
+
+#fit a regression model and use LOOCV to evaluate performance
+model <- train(y ~ grain_size + density + temperature + height, data = data, method = "lm", trControl = ctrl)
+
+#view summary of LOOCV               
+print(model)
+```
+
+```{r}
+library(tree)
+
+tree.fit <- tree(y ~ grain_size + density + temperature + height, data = train.data)
+```
+```{r}
+tree.fit
+```
+
+```{r}
+plot(tree.fit); text(tree.fit)
+```
+```{r}
+y.tree <- predict(tree.fit, test.data)
+vs.error <- mean((test.data$y - predict(tree.fit, test.data))^2)
+absolute_error <- mean(abs(test.data$y - predict(tree.fit, test.data)))
+absolute_error
+```
+
+```{r}
+vs.error
+```
+```{r}
+plot(test.data$y, y.tree)
+```
+
+```{r}
+library(randomForest)
+rf <- randomForest(y ~ grain_size + density + temperature + height, data = train.data,
+                   ntree = 150,
+                   mtry = 5)
+ 
+rf.pred <- predict(rf, newdata=test.data)
+plot(rf.pred, test.data$y)
+abline(0,1)
+mean((rf.pred- Auto.test)^2)
+mean(abs(rf.pred- test.data$y))
+```
+```{r}
+varImpPlot(rf.Auto,
+           sort = T,
+           n.var = 7,
+           main = "Variable Importance")
+importance(rf.Auto)
+```
