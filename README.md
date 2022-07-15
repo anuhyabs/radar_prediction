@@ -11,13 +11,16 @@ Currently, we know that there is backscatter when a radar is directed towards sn
 ### Application Example
 
 Decsision Tree Model (for VV polarization):
+
 ![Decision Tree](saving_plot1.jpeg)
 
 Random Forest Model (for VV polarization):
-![alt text](https://github.com/snowex-hackweek/radar_prediction/blob/[main]/RandomForest.jpg?raw=true)
+
+![Random Forest](RandomForest.jpg)
 
 Variable Importance (for VV polarization):
-![alt text](https://github.com/snowex-hackweek/radar_prediction/blob/[main]/VI.jpg?raw=true)
+
+![Variable Importance](VI.jpg)
 
 ### Sample data
 
