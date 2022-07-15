@@ -2,7 +2,7 @@
 
 ## Project Summary
 
-We are trying to estimate the backscattering of radar from snowpits using parameters from SnowEx data such as density, temperature, grain size and height. We are also trying to understand the relationship between these input parameters and the backscatter and evaluate the parameter sensitivity. We also want to explore the link between SnowEx pit measurements and input parameters of DMRT-Bic.
+We are trying to estimate the backscattering of radar from snowpits using parameters from SnowEx data such as density, temperature, grain size and height. We are also trying to understand the relationship between these input parameters and the backscatter and evaluate the parameter sensitivity. We also want to explore the link between SnowEx pit measurements and input parameters of DMRT-Bic. Another cool thing would be to see if there is a correlation between the SWE and the amplitudes.
 
 ### The problem
 
@@ -37,6 +37,7 @@ UAVSAR Data for Output:
 1. Can we use machine learning to predict the radar backscattering from snowex input parameters?
 2. Is there a relationship between the DMRT input parameters and SnowEx pit measurements?
 3. How much do the input parameters contribute  to the variability of the amplitude? 
+4. Is there a correlation between the SWE and the amplitudes?
 
 ### Existing methods
 
@@ -64,3 +65,4 @@ We are implementing linear regression, decision trees and random forest machine 
 2. https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=6877612
 3. https://web.eecs.umich.edu/~leutsang/Computer%20Codes%20and%20Simulations.html
 4. https://ntrs.nasa.gov/api/citations/20150000366/downloads/20150000366.pdf
+5. https://snowexsql.readthedocs.io/en/latest/gallery/raster_union_and_more_example.html  
