@@ -10,11 +10,20 @@ Currently, we know that there is backscatter when a radar is directed towards sn
 
 ### Application Example
 
-List one specific application of this work.
+Decsision Tree Model (for VV polarization):
+![alt text](https://github.com/snowex-hackweek/radar_prediction/blob/[main]/saving_plot1.jpg?raw=true)
+
+Random Forest Model (for VV polarization):
+![alt text](https://github.com/snowex-hackweek/radar_prediction/blob/[main]/RandomForest.jpg?raw=true)
+
+Variable Importance (for VV polarization):
+![alt text](https://github.com/snowex-hackweek/radar_prediction/blob/[main]/VI.jpg?raw=true)
 
 ### Sample data
 
 If you already have some data to explore, briefly describe it here (size, format, how to access).
+
+
 
 ### Specific Questions
 
@@ -24,11 +33,11 @@ If you already have some data to explore, briefly describe it here (size, format
 
 ### Existing methods
 
-How would you or others traditionally try to address this problem?
+The existing method to do this is using a DMRT Model. 
 
 ### Proposed methods/tools
 
-Building from what you learn at this hackweek, what new approaches would you like to try to implement?
+We are implementing linear regression, decision trees and random forest machine learning models to helps us answer the questions.
 
 ### Collaborators on this project
 
@@ -47,3 +56,4 @@ Building from what you learn at this hackweek, what new approaches would you lik
 1. https://ieeexplore.ieee.org/document/6185696
 2. https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=6877612
 3. https://web.eecs.umich.edu/~leutsang/Computer%20Codes%20and%20Simulations.html
+4. https://ntrs.nasa.gov/api/citations/20150000366/downloads/20150000366.pdf
