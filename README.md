@@ -24,9 +24,13 @@ Variable Importance (for VV polarization):
 
 ### Sample data
 
-If you already have some data to explore, briefly describe it here (size, format, how to access).
+Snow pit data set accessed from the snowexsql database:
 
+![snowex](snowex.jpeg)
 
+UAVSAR Data for Output:
+
+![uavsar](uavsar.jpeg)
 
 ### Specific Questions
 
